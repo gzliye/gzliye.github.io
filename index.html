@@ -5,17 +5,21 @@
   
 
   
-  <title>杂思闲录</title>
+  <title>🍂🍂🍂</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="杂思闲录">
+  <meta name="description" content="深圳办公室VPN设置指南">
+<meta name="keywords" content="VPN Mac">
+<meta property="og:type" content="website">
+<meta property="og:title" content="🍂🍂🍂">
 <meta property="og:url" content="https://gzliye.github.io/index.html">
-<meta property="og:site_name" content="杂思闲录">
+<meta property="og:site_name" content="🍂🍂🍂">
+<meta property="og:description" content="深圳办公室VPN设置指南">
 <meta property="og:locale" content="zh-cn">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="杂思闲录">
+<meta name="twitter:title" content="🍂🍂🍂">
+<meta name="twitter:description" content="深圳办公室VPN设置指南">
   
-    <link rel="alternate" href="/atom.xml" title="杂思闲录" type="application/atom+xml">
+    <link rel="alternate" href="/atom.xml" title="🍂🍂🍂" type="application/atom+xml">
   
   
     <link rel="icon" href="/favicon.png">
@@ -34,11 +38,11 @@
   <div id="header-outer" class="outer">
     <div id="header-title" class="inner">
       <h1 id="logo-wrap">
-        <a href="/" id="logo">杂思闲录</a>
+        <a href="/" id="logo">🍂🍂🍂</a>
       </h1>
       
         <h2 id="subtitle-wrap">
-          <a href="/" id="subtitle">写给自己看</a>
+          <a href="/" id="subtitle">🍃🍃🍃</a>
         </h2>
       
     </div>
@@ -89,18 +93,18 @@
     <div class="article-entry" itemprop="articleBody">
       
         <h2 id="一、验证VPN服务器域名"><a href="#一、验证VPN服务器域名" class="headerlink" title="一、验证VPN服务器域名"></a>一、验证VPN服务器域名</h2><p>在终端执行如下命令nslookup sino-cloud.ticp.io，应该可以通过动态域名找到深圳办公室网络的公网IP地址（这个地址经常变化，发生改变后，会通过脚本自动更新，但是会有滞后，如果急用，可以用TeamViewer远程登录服务器找到新的IP地址）</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">user$ nslookup sino-cloud.ticp.io</span><br><span class="line">Server:		192.168.2.1</span><br><span class="line">Address:	192.168.2.1<span class="comment">#53</span></span><br><span class="line"></span><br><span class="line">Non-authoritative answer:</span><br><span class="line">Name:	sino-cloud.ticp.io</span><br><span class="line">Address: 121.34.30.167</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">$ nslookup sino-cloud.ticp.io</span><br><span class="line">Server:		192.168.2.1</span><br><span class="line">Address:	192.168.2.1<span class="comment">#53</span></span><br><span class="line"></span><br><span class="line">Non-authoritative answer:</span><br><span class="line">Name:	sino-cloud.ticp.io</span><br><span class="line">Address: 121.34.30.167</span><br></pre></td></tr></table></figure>
 <h2 id="二、在Mac上新建VPN连接"><a href="#二、在Mac上新建VPN连接" class="headerlink" title="二、在Mac上新建VPN连接"></a>二、在Mac上新建VPN连接</h2><p><img src="/images/02-CreateVPN.gif" alt="02-CreateVPN"></p>
 <p>注：操作里面输入的密码另外告知</p>
 <h2 id="三、连接到VPN"><a href="#三、连接到VPN" class="headerlink" title="三、连接到VPN"></a>三、连接到VPN</h2><p>1、点击连接按钮，连接成功后，应该获得一个局域网IP地址（192.168.1.160-179之间）</p>
 <p><img src="/images/03-ConnectVPN.gif" alt="03-ConnectVPN"></p>
 <p>2、用ssh命令连接服务器来检测VPN工作是否正常</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">user$ ssh x3550m4@192.168.1.120</span><br><span class="line">x3550m4@192.168.1.120<span class="string">'s password: </span></span><br><span class="line"><span class="string">Welcome to Ubuntu 16.04.4 LTS (GNU/Linux 4.13.0-45-generic x86_64)</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string"> * Documentation:  https://help.ubuntu.com</span></span><br><span class="line"><span class="string"> * Management:     https://landscape.canonical.com</span></span><br><span class="line"><span class="string"> * Support:        https://ubuntu.com/advantage</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">0 个可升级软件包。</span></span><br><span class="line"><span class="string">0 个安全更新。</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">*** 需要重启系统 ***</span></span><br><span class="line"><span class="string">Last login: Sun Jul  1 12:13:52 2018 from 192.168.1.160</span></span><br><span class="line"><span class="string">x3550m4@x3550m4-02:~$</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">$ ssh x3550m4@192.168.1.120</span><br><span class="line">x3550m4@192.168.1.120<span class="string">'s password: </span></span><br><span class="line"><span class="string">Welcome to Ubuntu 16.04.4 LTS (GNU/Linux 4.13.0-45-generic x86_64)</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string"> * Documentation:  https://help.ubuntu.com</span></span><br><span class="line"><span class="string"> * Management:     https://landscape.canonical.com</span></span><br><span class="line"><span class="string"> * Support:        https://ubuntu.com/advantage</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">0 个可升级软件包。</span></span><br><span class="line"><span class="string">0 个安全更新。</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">*** 需要重启系统 ***</span></span><br><span class="line"><span class="string">Last login: Sun Jul  1 12:13:52 2018 from 192.168.1.160</span></span><br><span class="line"><span class="string">x3550m4@x3550m4-02:~$</span></span><br></pre></td></tr></table></figure>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://gzliye.github.io/2018/07/01/Mchain-VPN-Setup/" data-id="cjj2hkk8g0000e7upbnpazobr" class="article-share-link">Share</a>
+      <a data-url="https://gzliye.github.io/2018/07/01/Mchain-VPN-Setup/" data-id="cjj2i2p520000etupoa7jnnub" class="article-share-link">Share</a>
       
       
     </footer>
